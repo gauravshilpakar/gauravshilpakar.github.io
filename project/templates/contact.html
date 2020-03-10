@@ -2,6 +2,14 @@
 
 {% block content %}
 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for m in messages %}
+<p>{{m}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
 <form action="#" method="POST">
 
     <div>Name: </div>
