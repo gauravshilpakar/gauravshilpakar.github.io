@@ -3,22 +3,33 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+h1 {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    scroll-behavior: smooth;
+}
+
 html {
     font-family: 'Open Sans', monospace;
-    background-color: black;
+    -webkit-font-smoothing: antialiased;
+    background-color: #121212;
     color: aliceblue;
     height: 100%;
 }
+
+
 
 body {
     height: 100%;
     margin: 0;
 }
 
+
+
+
 p {
-    margin-top: 10%;
     text-align: center;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 span {
@@ -30,7 +41,6 @@ span {
     height: 1px;
     background: black;
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(white), to(black));
-
 }
 
 .footer {
@@ -41,7 +51,7 @@ span {
 }
 
 .push {
-    min-height: 50%;
+    min-height: 80%;
 }
 
 
@@ -100,6 +110,10 @@ span {
     }
 }
 
+.n {
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+}
+
 @media screen and (min-width: 601px) {
     .n {
         margin-left: 3vw;
@@ -124,7 +138,6 @@ span {
     text-decoration: none;
     outline: none;
     opacity: 0.7;
-    transition: .2s ease-in;
 }
 
 .s:hover {
@@ -159,11 +172,6 @@ span {
 }
 
 
-.intro {
-    font-family: 'IBM Plex Sans', sans-serif;
-    text-align: justify;
-    margin-bottom: auto;
-}
 
 
 .break {
@@ -186,6 +194,10 @@ span {
     right: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    animation: fadeInAnimation ease-in 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: initial;
+
 }
 
 .title {
@@ -215,7 +227,214 @@ span {
         url("../img/IMG_2661.jpg");
     height: 100%;
     width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.bimg {
+    animation: fadeInAnimation ease-in 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .body-container {
+        font-family: 'IBM Plex Sans', sans-serif;
+        text-align: justify;
+        margin: 80px 160px 80px 160px;
+    }
+}
+
+@media screen and (max-width: 601px) {
+    .body-container {
+        font-family: 'IBM Plex Sans', sans-serif;
+        text-align: justify;
+        margin: 80px 40px 80px 40px;
+    }
+}
+
+.grid {
+    display: grid;
+    gap: 4rem;
+    column-count: 3;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 20px
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #262525;
+    font-size: 1rem;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.leenks {
+    width: 30px;
+    filter: invert(100%);
+    opacity: 0.7;
+}
+
+.leenks:hover {
+    opacity: 1;
+}
+
+.landing {
+    margin-top: 1rem;
+    background: url(../img/acastro_190416_1777_music_ai_0001.0.0.jpg) 50% 50% no-repeat;
+    /* 50% 50% centers image in div */
+    background-size: cover;
+    width: 250px;
+    height: 200px;
+}
+
+.techstack {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2px 0 2px 0;
+}
+
+.t {
+    margin: 2px 5px 2px 5px;
+    border: #fff;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 4px;
+}
+
+.desc {
+    margin: 0 20px 5px 20px;
+
+}
+
+.leenkscontainer {
+    margin: 5px 0;
+}
+
+ul li {
+    padding-left: 2rem;
+    background-image: url(star.svg);
+    background-position: 0 0;
+    background-size: 1.6rem 1.6rem;
+    background-repeat: no-repeat;
+}
+
+button {
+    margin-top: 40px;
+    color: goldenrod;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans';
+    background: none;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    border-color: goldenrod;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+}
+
+button:hover {
+    background-color: goldenrod;
+    color: aliceblue;
+}
+
+.contactform {
+    margin: 50px;
+}
+
+.portfolio-block form {
+    max-width: 650px;
+    padding: 20px;
+    margin: auto;
+    background: #262525;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+user agent stylesheet form {
+    display: block;
+    margin-top: 0em;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #262525;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0.5px solid #262525;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+textarea.form-control {
+    height: 200px;
+}
+
+.titles {
+    align-content: center;
+}
+
+/* .container {
+    background: #262525;
+} */
